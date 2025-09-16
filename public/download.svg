@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <!-- Light Blue Neon -->
+    <filter id="blueGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"></feGaussianBlur>
+      <feMerge>
+        <feMergeNode in="blur"></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+
+    <!-- Light Green Neon -->
+    <filter id="greenGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"></feGaussianBlur>
+      <feMerge>
+        <feMergeNode in="blur"></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Blue </ -->
+  <text x="40%" y="55%" text-anchor="middle" font-family="monospace" font-size="64" font-weight="bold" fill="#00f0ff" filter="url(#blueGlow)">
+    &lt;/
+  </text>
+
+  <!-- Green > -->
+  <text x="65%" y="55%" text-anchor="middle" font-family="monospace" font-size="64" font-weight="bold" fill="#39ff14" filter="url(#greenGlow)">
+    &gt;
+  </text>
+</svg>
