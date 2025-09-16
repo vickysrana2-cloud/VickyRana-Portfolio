@@ -23,14 +23,7 @@ const Home = () => {
             building engaging, efficient, and meaningful web applications.
             Scroll down to check out some of my work!
           </p>
-          {/* <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-      <a href="#projects" className="px-6 py-3 bg-red-500 text-white rounded-lg font-medium hover:bg-red-600 transition">
-        View Projects
-      </a>
-      <a href="#contact" className="px-6 py-3 border border-red-500 text-red-500 rounded-lg font-medium hover:bg-red-500 hover:text-white transition">
-        Contact Me
-      </a>
-    </div> */}
+
         </div>
       </section>
 
