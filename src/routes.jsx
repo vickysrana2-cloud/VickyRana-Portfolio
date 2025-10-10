@@ -19,7 +19,7 @@ const routes = [
       { index: true, element: <Home /> }, // Default landing
       { path: "projects", element: <Projects /> },
       { path: "aboutMe", element: <AboutMe /> },
-      { path: "specialties", element: <Specialties /> },
+      { path: "specialities", element: <Specialties /> },
       { path: "contact", element: <Contact /> },
       { path: "resume", element: <MyResume /> },
     ],
