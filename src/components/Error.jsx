@@ -9,6 +9,7 @@ const Error = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 text-center px-4">
       <img
+        loading="lazy"
         className="w-72 sm:w-96 max-w-full mx-auto drop-shadow-lg"
         src={errorImg}
         alt="Error Illustration"
