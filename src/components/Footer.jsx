@@ -1,17 +1,19 @@
 import React from "react";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
+import { Link } from "react-router";
 
 
 const Footer = () => {
+  const moveTop=()=>{window.scrollTo({top:0,left:0,behavior: 'smooth'})}
   return (
-    <footer className="bg-gray-900 text-white px-8 py-16 rounded-t-3xl w-full">
+    <footer className="bg-gray-900 text-white px-8 mt-2 py-16 rounded-t-3xl w-full">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
           <p className="text-xs uppercase tracking-wider text-gray-400">
             /Reach me
           </p>
-          <a href="mailto:vickysrana2@gmail.com">vickysrana2@gmail.com</a>
+          <a href="mailto:vickysrana2@gmail.com" className="hover:underline">vickysrana2@gmail.com</a>
         </div>
 
         <div className="flex flex-wrap justify-evenly">
@@ -21,24 +23,24 @@ const Footer = () => {
             </p>
             <ul className="mt-2 space-y-2">
               <li>
-                <a href="#" className="hover:underline">
+                <Link to="/" className="hover:underline" onClick={moveTop}>
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:underline">
+                <Link to="/projects" className="hover:underline" onClick={moveTop}>
                   PROJECT-S
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:underline">
+                <Link to="/aboutMe" className="hover:underline" onClick={moveTop}>
                   ABOUT ME
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:underline">
-                  SPECIALTIES
-                </a>
+                <Link to="/specialities" className="hover:underline" onClick={moveTop}>
+                  SPECIALITIES
+                </Link>
               </li>
             </ul>
           </div>
@@ -59,9 +61,9 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:underline">
+                <Link to="/resume" className="hover:underline" onClick={moveTop}>
                   My resume
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
