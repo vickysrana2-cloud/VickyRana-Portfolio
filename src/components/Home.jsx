@@ -29,10 +29,10 @@ const Home = () => {
           <Link
             onClick={()=>window.scrollTo({top:0, left:0, behavior:"smooth"})}
             to={"/projects"}
-            className="relative overflow-hidden px-6 py-3 font-bold text-white rounded-full backdrop-blur-lg bg-white/10 group"
+            className="relative z-10 overflow-hidden px-6 py-3 font-bold text-white rounded-full backdrop-blur-sm bg-white/10 group"
           >
             <span className="relative z-10 rounded-full">View My Projects</span>
-            <span className="absolute rounded-full inset-0 w-full h-full bg-gradient-to-r from-pink-500 to-yellow-500 transform scale-x-0 origin-center transition-transform duration-300 ease-out group-hover:scale-x-100"></span>
+            <span className="absolute rounded-full inset-0 w-full opacity-80 h-full bg-gradient-to-r from-pink-500 to-yellow-500 transform scale-x-0 origin-center transition-transform duration-300 ease-out group-hover:scale-x-100"></span>
           </Link>
         </div>
       </div>
