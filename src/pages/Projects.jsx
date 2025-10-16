@@ -15,7 +15,7 @@ const images = [
 const Projects = () => {
   const setOfUrl = [
     { url: "https://daily-planner-orpin.vercel.app/" },
-    { url: "http://localhost:5173/" },
+    { url: "https://parking-lot-manager.vercel.app/" },
     { url: "https://vicky-rana-portfolio.vercel.app/" }, // This should be need to replace with deployeed url
   ];
 
