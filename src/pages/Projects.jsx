@@ -16,7 +16,7 @@ const Projects = () => {
   const setOfUrl = [
     { url: "https://daily-planner-orpin.vercel.app/" },
     { url: "http://localhost:5173/" },
-    { url: "http://127.0.0.1:3000/Parking%20Lot%20Manager/index.html" }, // This should be need to replace with deployeed url
+    { url: "https://vicky-rana-portfolio.vercel.app/" }, // This should be need to replace with deployeed url
   ];
 
   const settings = {
