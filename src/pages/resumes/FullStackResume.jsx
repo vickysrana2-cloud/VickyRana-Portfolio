@@ -32,12 +32,47 @@ const FullStackResume = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-sm">
-            <div className="flex items-center gap-2"><FaEnvelope className="text-blue-300" /> vickysrana2@gmail.com</div>
-            <div className="flex items-center gap-2"><FaPhone className="text-blue-300" /> 7218869971</div>
-            <div className="flex items-center gap-2"><FaLinkedin className="text-blue-300" /> vicky-rana-7457ab225</div>
-            <div className="flex items-center gap-2"><FaGithub className="text-blue-300" /> vickysrana2-cloud</div>
-            <div className="flex items-center gap-2 sm:col-span-2"><FaMapMarkerAlt className="text-blue-300" /> Nagpur, Maharashtra</div>
-          </div>
+  <div className="flex items-center gap-2">
+    <FaEnvelope className="text-blue-300" />
+    <a href="mailto:vickysrana2@gmail.com" className="hover:underline">
+      vickysrana2@gmail.com
+    </a>
+  </div>
+
+  <div className="flex items-center gap-2">
+    <FaPhone className="text-blue-300" />
+    7218869971
+  </div>
+
+  <div className="flex items-center gap-2">
+    <FaLinkedin className="text-blue-300" />
+    <a
+      href="https://www.linkedin.com/in/vicky-rana-7457ab225"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:underline"
+    >
+      vicky-rana-7457ab225
+    </a>
+  </div>
+
+  <div className="flex items-center gap-2">
+    <FaGithub className="text-blue-300" />
+    <a
+      href="https://github.com/vickysrana2-cloud"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:underline"
+    >
+      vickysrana2-cloud
+    </a>
+  </div>
+
+  <div className="flex items-center gap-2 sm:col-span-2">
+    <FaMapMarkerAlt className="text-blue-300" />
+    Nagpur, Maharashtra
+  </div>
+</div>
         </div>
       </div>
 
@@ -184,7 +219,7 @@ const FullStackResume = () => {
                 <h3 className="font-bold text-lg text-gray-800">StayEase – Hotel Booking Platform</h3>
                 <p className="text-xs font-mono text-blue-600 bg-blue-50 inline-block px-2 py-0.5 rounded mt-1">React.js, Spring Boot, REST APIs, MySQL, JWT, Tailwind CSS</p>
                 <ul className="list-disc ml-5 mt-3 text-sm text-gray-600 space-y-1">
-                  <li>Built responsive app for browsing, ordering, and tracking deliveries</li>
+                  <li>Built a scalable backend for a hotel booking app with room availability, reservations, and combo deals</li>
                   <li>Integrated authentication + payment simulation</li>
                   <li>Improved UI responsiveness via optimized API usage</li>
                 </ul>

@@ -1,23 +1,12 @@
 import React, { useState } from "react";
 import FullStackResume from "./resumes/FullStackResume";
+import BackendResume from "./resumes/BackendResume";
+import FrontendResume from "./resumes/FrontendResume";
 import { FaLaptopCode, FaServer, FaRocket, FaDownload } from "react-icons/fa";
 import fullStackResume from "../assets/resumePdf/fullStack_resume.pdf";
+import backendresume from "../assets/resumePdf/vickyrana_resume_be.pdf";
+import frontendresume from "../assets/resumePdf/vickyrana_resume_fe.pdf";
 
-const FrontendResume = () => (
-  <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
-    <h3 className="text-2xl font-bold text-white flex items-center gap-2">
-      <FaLaptopCode /> Frontend Developer
-    </h3>
-  </div>
-);
-
-const BackendResume = () => (
-  <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
-    <h3 className="text-2xl font-bold text-white flex items-center gap-2">
-      <FaServer /> Backend Developer
-    </h3>
-  </div>
-);
 
 const MyResume = () => {
   const [activeTab, setActiveTab] = useState("frontend");
@@ -28,10 +17,10 @@ const MyResume = () => {
     { id: "fullstack", label: "Full Stack", icon: <FaRocket /> },
   ];
 
-  // ✅ Dynamic PDF mapping
+  //  Dynamic PDF mapping
   const pdfMap = {
-    frontend: "/resumes/frontend-resume.pdf",
-    backend: "/resumes/backend-resume.pdf",
+    frontend: frontendresume,
+    backend: backendresume,
     fullstack: fullStackResume,
   };
 
@@ -54,7 +43,7 @@ const MyResume = () => {
         {/* Download Button */}
         <button
           onClick={handleDownload}
-          className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-teal-500 to-cyan-600 hover:scale-105 transition shadow-lg"
+          className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-amber-500 to-orange-600 hover:scale-105 transition shadow-lg"
         >
           <FaDownload />
           Download {activeTab} Resume
