@@ -3,7 +3,7 @@ import { FaPaperPlane } from "react-icons/fa";
 import emailjs from "@emailjs/browser"; // install with npm i @emailjs/browser
 import coffeeLover from "../assets/coffeeLover.svg";
 
-export default function ConnectSection() {
+export default function ConnectSection({ a, b }) {
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -44,12 +44,12 @@ export default function ConnectSection() {
   };
 
   return (
-    <section className="text-white min-h-screen flex items-center justify-center p-8">
+    <section className="text-white min-h-screen flex items-center justify-center p-8 ">
       <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         {/* Left Side - Text & Illustration */}
         <div className="flex flex-col items-center md:items-start space-y-6">
           <h2 className="text-4xl font-extrabold leading-snug">
-            Got a project in <span className="text-cyan-400">mind?</span>
+            {a} <span className="text-cyan-400">{b}</span>
           </h2>
           <div className="w-72 lg:w-96">
             <img loading="lazy" src={coffeeLover} alt="Project Illustration" />

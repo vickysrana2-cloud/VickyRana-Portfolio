@@ -1,137 +1,113 @@
 import React, { useState } from "react";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaDesktop, FaTabletAlt, FaMobileAlt } from "react-icons/fa";
 
 export default function ResponsivePreview({ url, proDetail }) {
-  if (proDetail == null) {
-    return <p>Loading...</p>;
-  }
+  if (!proDetail) return <div className="p-20 text-center text-gray-500">Loading details...</div>;
 
   const [device, setDevice] = useState("desktop");
-
   const { title, description, tech, github } = proDetail;
 
-  console.log(title, description, tech, github);
-  // console.log(proDetail);
+  const devices = [
+    { id: "desktop", label: "Desktop", icon: <FaDesktop />, size: "max-w-6xl w-full h-[600px]" },
+    { id: "tablet", label: "Tablet", icon: <FaTabletAlt />, size: "max-w-[768px] w-full h-[700px]" },
+    { id: "mobile", label: "Mobile", icon: <FaMobileAlt />, size: "max-w-[375px] w-full h-[650px]" },
+  ];
 
-  const frameSizes = {
-    desktop: "w-full max-w-6xl h-[700px]",
-    tablet: "w-[768px] h-[650px]",
-    tabletPortrait: "w-[600px] h-[650px]",
-    mobile: "w-[375px] h-[600px]",
-  };
+  const activeDevice = devices.find((d) => d.id === device);
 
   return (
-    <div className="min-h-screen flex flex-col items-center p-6">
-      {/* Toolbar */}
-      <div className="flex gap-2 mb-6 flex-wrap justify-center">
-        {[
-          { id: "desktop", label: "Desktop" },
-          { id: "tablet", label: "Tablet" },
-          { id: "tabletPortrait", label: "Tablet (Portrait)" },
-          { id: "mobile", label: "Mobile" },
-        ].map((d) => (
-          <button
-            key={d.id}
-            onClick={() => setDevice(d.id)}
-            className={`px-4 py-2 rounded-md font-semibold text-sm transition ${
-              device === d.id
-                ? "bg-gray-800 text-white"
-                : "bg-gray-300 text-gray-700 hover:bg-gray-400"
-            }`}
+    <div className="w-full flex flex-col items-center bg-transparent">
+      {/* 1. Device Switcher (Toolbar) */}
+      <div className="sticky top-0 z-20 w-full flex justify-center  bg-black/30 backdrop-blur-md border-b border-white/5">
+        <div className="flex bg-black/20 p-1 rounded-xl border border-white/50">
+          {devices.map((d) => (
+            <button
+              key={d.id}
+              onClick={() => setDevice(d.id)}
+              className={`flex items-center gap-2 px-4 py-1 rounded-lg text-sm font-medium transition-all duration-300 ${
+                device === d.id
+                  ? "bg-blue-600 text-white shadow-lg shadow-blue-500/20"
+                  : "text-gray-400 hover:text-white hover:bg-white/5"
+              }`}
+            >
+              {d.icon}
+              <span className="hidden sm:inline">{d.label}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* 2. Live Preview Frame */}
+      <div className="w-full flex justify-center pb-8 ">
+        {url ? (
+          <div
+            className={`relative transition-all duration-500 ease-in-out border-[12px] border-gray-700 rounded-[2.5rem] shadow-2xl bg-gray-900 overflow-hidden ${activeDevice.size}`}
           >
-            {d.label}
-          </button>
-        ))}
+            {/* Camera / Notch Detail for Mobile */}
+            {device === "mobile" && (
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-gray-800 rounded-b-2xl z-10" />
+            )}
+            
+            <iframe
+              src={url}
+              className="w-full h-full bg-white"
+              title="Project Preview"
+              loading="lazy"
+            />
+          </div>
+        ) : (
+          <div className="h-64 flex items-center justify-center border-2 border-dashed border-white/10 rounded-2xl w-full max-w-4xl text-gray-500">
+            Live preview unavailable for this project
+          </div>
+        )}
       </div>
 
-      {/* Preview Frame */}
-      <div
-        className={`border-[18px] border-gray-400 bg-white  rounded-4xl shadow-xl shadow-black/80 overflow-hidden transition-all duration-300 ${frameSizes[device]}`}
-      >
-        <iframe
-          src={url}
-          className="w-full h-full border-none"
-          title="Weather App Demo"
-          loading="lazy"
-        ></iframe>
-      </div>
+      {/* 3. Project Information Card */}
+      <article className="relative w-full max-w-6xl mx-auto px-4 pb-12">
+        <div className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-8 md:p-12 backdrop-blur-xl transition-all duration-500 hover:border-blue-500/30">
+          
+          {/* Decorative hover gradient */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-transparent to-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
-      <article
-        className="
-  relative group 
-  w-full 
-  max-w-6xl 
-  mx-auto
-  backdrop-blur-2xl 
-  bg-white/10 dark:bg-gray-800 
-  border border-gray-200 dark:border-gray-700 
-  rounded-2xl 
-  p-6 md:p-8 lg:p-10 
-  my-8 
-  shadow-lg hover:shadow-2xl 
-  transition-all duration-300 
-  hover:-translate-y-1 
-  overflow-hidden
-"
-      >
-        {/* Main gradient background that scales on hover */}
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-amber-400 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left -z-10"></div>
+          <div className="relative z-10">
+            <header className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
+              <div>
+                <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight mb-2">
+                  {title}
+                </h2>
+                <div className="h-1 w-20 bg-blue-500 rounded-full" />
+              </div>
 
-        {/* Content container with gradient text on hover */}
-        <div className="relative">
-          {/* Header section */}
-          <div className="mb-6">
-            <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:via-gray-900 group-hover:to-cyan-600 dark:group-hover:from-white dark:group-hover:via-gray-100 dark:group-hover:to-white transition-all duration-500">
-                {title}
-              </h2>
-
-              {/* GitHub link */}
               <a
                 href={github}
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r group-hover:from-black/70 group-hover:to-cyan-500 group-hover:text-gray-900 text-white font-medium rounded-xl transition-all duration-500 hover:shadow-lg hover:scale-[1.03]"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="flex items-center gap-3 px-6 py-3 bg-white text-black font-bold rounded-full hover:bg-blue-500 hover:text-white transition-all duration-300 active:scale-95 shadow-xl"
               >
-                <FaGithub className="w-5 h-5 transition-colors duration-500" />
-                <span>View Code</span>
-                <span className="group-hover:translate-x-1 transition-transform duration-300">
-                  →
-                </span>
+                <FaGithub className="text-xl" />
+                View Source Code
               </a>
-            </div>
+            </header>
 
-            {/* Description */}
-            <p className="text-teal-700 group-hover:text-black font-semibold text-base md:text-lg leading-relaxed transition-colors duration-500">
+            <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-4xl font-light mb-10">
               {description}
             </p>
-          </div>
 
-          {/* Tech stack section */}
-          <div className="mt-8 pt-6 border-t border-gray-100 dark:border-gray-700 group-hover:border-gray-200 dark:group-hover:border-gray-600 transition-colors duration-500">
-            <h3 className="text-sm font-semibold text-gray-500 dark:text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 uppercase tracking-wider mb-4 transition-colors duration-500">
-              Technologies Used
-            </h3>
-
-            <ul className="flex flex-wrap gap-3">
-              {tech.map((t, index) => (
-                <li
-                  key={index}
-                  className="
-  px-4 py-2 rounded-full text-sm
-  bg-transparent
-  border border-gray-300 dark:border-gray-600
-  text-black font-semibold dark:text-gray-200
-  hover:border-gray-500 dark:hover:border-gray-400
-  hover:text-gray-900 dark:hover:text-white
-  transition
-"
-
-                >
-                  {t}
-                </li>
-              ))}
-            </ul>
+            <footer className="border-t border-white/10 pt-8">
+              <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-blue-400 mb-6">
+                Core Stack
+              </h3>
+              <div className="flex flex-wrap gap-3">
+                {tech.map((t, i) => (
+                  <span
+                    key={i}
+                    className="px-5 py-2 rounded-full text-sm font-medium bg-white/5 border border-white/10 text-gray-300 hover:border-blue-500/50 hover:text-white transition-colors cursor-default"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </footer>
           </div>
         </div>
       </article>

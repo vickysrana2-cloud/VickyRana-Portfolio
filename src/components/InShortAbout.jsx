@@ -1,44 +1,47 @@
-import { useState } from "react";
 import { Link } from "react-router";
 
 export default function InShortAbout() {
-  const [expanded, setExpanded] = useState(false);
-
   return (
-    <div className="rounded-2xl content-start p-6 h-[480px]  lg:h-screen text-left max-w-5xl pt-20 lg:pt-48 mx-auto">
-      <div className="  lg:px-24">
-        <h2
-          className="text-4xl md:text-5xl font-semibold mb-4 text-teal-200 
-             drop-shadow-[0_0_10px_#00f7ff]"
-        >
+    <section className="max-w-6xl mx-auto px-6 py-16 lg:py-24">
+      
+      <div className="rounded-2xl border border-gray-300/30 backdrop-blur-md bg-white/5 p-6 lg:p-10">
+
+        {/* Heading */}
+        <h2 className="text-3xl md:text-5xl font-semibold mb-6 text-teal-200 drop-shadow-[0_0_10px_#00f7ff]">
           At a Glance
         </h2>
 
-        <p
-          className="text-sm md:text-xl lg:text-2xl leading-normal font-semibold  font-sans italic text-justify 
-              bg-gradient-to-r from-pink-500 via-purple-400 to-indigo-500 bg-clip-text text-transparent 
-              drop-shadow-lg"
-        >
-          {expanded
-            ? "I am pursuing Java Full Stack Web Development training with hands-on experience in building web applications using HTML, CSS, JavaScript, React, and Java Spring Boot. A passionate learner, I am exploring full stack development with a strong focus on solving real-world problems through clean, modern, and efficient web solutions."
-            : "I am pursuing Java Full Stack Web Development training with hands-on experience in building web applications using HTML, CSS, JavaScript, React, and Java Spring Boot."}
+        {/* Paragraph */}
+        <p className="text-sm md:text-lg lg:text-xl leading-relaxed font-medium italic text-justify 
+                      bg-gradient-to-r from-pink-500 via-purple-400 to-indigo-500 
+                      bg-clip-text text-transparent drop-shadow-md space-y-2">
+          
+          Aspiring Full Stack Developer with hands-on experience building responsive and scalable web applications.<br />
+
+          Skilled in developing intuitive user interfaces and robust backend systems for real-world use cases.<br />
+
+          Familiar with implementing secure authentication, database management, and efficient API design.<br />
+
+          Focused on writing clean, maintainable code while continuously adapting to modern development practices.
+        
         </p>
 
-        <button
-          onClick={() => setExpanded(!expanded)}
-          className="mt-4 text-indigo-600 font-medium  hover:text-indigo-300 "
-        >
-          {expanded ? "Show Less" : "Read More"}
-        </button>
+        {/* CTA Button */}
+        <div className="mt-8">
+          <Link
+            onClick={() =>
+              window.scrollTo({ top: 0, left: 0, behavior: "smooth" })
+            }
+            to="/aboutMe"
+            className="inline-block px-6 py-2.5 rounded-full backdrop-blur-xl bg-white/10
+                       text-white font-semibold hover:bg-white/20 hover:scale-105 
+                       transition-transform duration-200"
+          >
+            More About Me
+          </Link>
+        </div>
+
       </div>
-      <Link
-        onClick={()=>window.scrollTo({top:0, left:0, behavior:"smooth"})}
-        to="/aboutMe"
-        className="inline-block mt-5 lg:px-6 lg:py-2.5 px-3 py-1 lg:ml-24 rounded-full backdrop-blur-2xl bg-white/10
-             text-white font-semibold hover:bg-white/20 hover:scale-105 transition-transform duration-200"
-      >
-        More About Me
-      </Link>
-    </div>
+    </section>
   );
 }

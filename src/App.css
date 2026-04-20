@@ -96,3 +96,149 @@
   }
 }
 
+
+
+/* ------------------------------------------------ */
+
+/* 📱 Tablet (≤1024px) */
+@media (max-width: 1024px) {
+  .circle1 {
+    width: 140px;
+    height: 140px;
+    top: 15%;
+    left: 5%;
+  }
+
+  .circle2 {
+    width: 120px;
+    height: 120px;
+    bottom: 10%;
+    right: 10%;
+  }
+
+  .circle3 {
+    width: 180px;
+    height: 180px;
+    bottom: 25%;
+    left: 30%;
+  }
+
+  .circle4 {
+    width: 80px;
+    height: 80px;
+    bottom: 5%;
+    left: 20%;
+  }
+
+  .circle5 {
+    width: 200px;
+    height: 200px;
+    bottom: 60%;
+    left: 30%;
+  }
+}
+
+/* 📱 Mobile (≤640px) */
+@media (max-width: 640px) {
+  .circle1 {
+    width: 90px;
+    height: 90px;
+    top: 10%;
+    left: 5%;
+  }
+
+  .circle2 {
+    width: 80px;
+    height: 80px;
+    bottom: 8%;
+    right: 5%;
+  }
+
+  .circle3 {
+    width: 120px;
+    height: 120px;
+    bottom: 20%;
+    left: 20%;
+  }
+
+  .circle4 {
+    width: 60px;
+    height: 60px;
+    bottom: 5%;
+    left: 10%;
+  }
+
+  .circle5 {
+    width: 140px;
+    height: 140px;
+    bottom: 55%;
+    left: 20%;
+  }
+}
+
+/* 📱 Small devices (≤480px) */
+@media (max-width: 480px) {
+  .circle1 {
+    width: 70px;
+    height: 70px;
+  }
+
+  .circle2 {
+    width: 60px;
+    height: 60px;
+  }
+
+  .circle3 {
+    width: 90px;
+    height: 90px;
+  }
+
+  .circle4 {
+    width: 50px;
+    height: 50px;
+  }
+
+  .circle5 {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+
+
+/* -------------------------------------------------- */
+
+
+/* gradient text animation */
+@keyframes gradient {
+  0%,100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 6s ease infinite;
+}
+
+/* scroll animation */
+@keyframes scrollDown {
+  0% { transform: translateY(0); opacity: 1; }
+  75% { transform: translateY(12px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 0; }
+}
+.scroll-down {
+  animation: scrollDown 2s ease-in-out infinite;
+}
+
+/* delay helpers */
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+
+
+.grid-bg {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='grid' width='60' height='60' patternUnits='userSpaceOnUse'%3E%3Cpath d='M 60 0 L 0 0 0 60' fill='none' stroke='rgba(255,255,255,0.03)' stroke-width='1'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grid)'/%3E%3C/svg%3E");
+}
