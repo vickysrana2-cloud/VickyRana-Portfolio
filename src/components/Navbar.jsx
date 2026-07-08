@@ -11,7 +11,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className=" bg-black/60 backdrop-blur-xs border-b-2 border-b-white/10 rounded-b-3xl text-white font-semibold px-6 py-4 shadow-md sticky top-0 z-50">
+    <nav className="bg-black/60 backdrop-blur-xs border-b-2 border-b-white/10 rounded-b-3xl text-white font-semibold px-3 sm:px-6 py-4 shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Left: Logo / Name */}
 
@@ -20,7 +20,7 @@ const Navbar = () => {
           to="/"
           onClick={moveTop}
           className={({ isActive }) =>
-            `flex items-center lg:text-4xl text-2xl font-bold tracking-wide transition-all duration-200 ease-in-out
+            `flex items-center text-xl sm:text-2xl lg:text-4xl font-bold tracking-wide transition-all duration-200 ease-in-out whitespace-nowrap
      [text-shadow:2px_2px_4px_rgba(220,38,38,0.5)] 
      hover:[text-shadow:0_0_5px_rgba(220,38,38,1),_0_0_5px_rgba(220,38,38,1)]
      ${

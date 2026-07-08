@@ -7,7 +7,7 @@ import { Link } from "react-router";
 const Footer = () => {
   const moveTop=()=>{window.scrollTo({top:0,left:0,behavior: 'smooth'})}
   return (
-    <footer className="bg-gray-900 text-white px-8 mt-2 py-16 rounded-t-3xl w-full">
+    <footer className="bg-gray-900 text-white px-4 sm:px-8 mt-2 py-12 sm:py-16 rounded-t-3xl w-full">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
           <p className="text-xs uppercase tracking-wider text-gray-400">
@@ -16,7 +16,7 @@ const Footer = () => {
           <a href="mailto:vickysrana2@gmail.com" className="hover:underline">vickysrana2@gmail.com</a>
         </div>
 
-        <div className="flex flex-wrap justify-evenly">
+        <div className="flex flex-wrap justify-between sm:justify-evenly gap-8">
           <div>
             <p className="text-xs uppercase tracking-wider text-gray-400">
               /Navigate to
@@ -70,8 +70,8 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="text-center my-20">
-        <h2 className="text-5xl md:text-6xl font-bold text-gray-300">
+      <div className="text-center my-12 sm:my-20">
+        <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold text-gray-300">
           Let’s bring ideas to life
         </h2>
       </div>

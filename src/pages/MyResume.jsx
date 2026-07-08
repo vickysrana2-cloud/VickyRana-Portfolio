@@ -37,13 +37,13 @@ const MyResume = () => {
     <div className="relative w-full mt-2 overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black rounded-3xl text-white">
 
       {/* Header */}
-      <div className="relative z-10 flex flex-col md:flex-row justify-between items-center px-6 pt-8 gap-4">
+      <div className="relative z-10 flex flex-col md:flex-row justify-between items-center px-4 sm:px-6 pt-8 gap-4">
         <h1 className="text-3xl md:text-4xl font-bold">My Resume</h1>
 
         {/* Download Button */}
         <button
           onClick={handleDownload}
-          className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-amber-500 to-orange-600 hover:scale-105 transition shadow-lg"
+          className="flex items-center justify-center gap-2 w-full sm:w-auto px-5 py-2.5 rounded-full bg-gradient-to-r from-amber-500 to-orange-600 hover:scale-105 transition shadow-lg text-sm sm:text-base"
         >
           <FaDownload />
           Download {activeTab} Resume
@@ -51,13 +51,13 @@ const MyResume = () => {
       </div>
 
       {/* Tabs */}
-      <div className="flex justify-center mt-8">
-        <div className="inline-flex bg-black/40 backdrop-blur-md rounded-full p-1.5 border border-white/10">
+      <div className="flex justify-center mt-8 px-4">
+        <div className="inline-flex max-w-full overflow-x-auto bg-black/40 backdrop-blur-md rounded-full p-1.5 border border-white/10">
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`px-6 py-2 rounded-full flex items-center gap-2 transition ${
+              className={`px-4 sm:px-6 py-2 rounded-full flex items-center gap-2 transition whitespace-nowrap ${
                 activeTab === tab.id
                   ? "bg-gradient-to-r from-teal-500 to-cyan-600 text-white"
                   : "text-gray-300 hover:text-white hover:bg-white/10"
@@ -71,7 +71,7 @@ const MyResume = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 px-6 py-12">
+      <div className="relative z-10 px-3 sm:px-6 py-8 sm:py-12">
         {activeTab === "frontend" && <FrontendResume />}
         {activeTab === "backend" && <BackendResume />}
         {activeTab === "fullstack" && <FullStackResume />}

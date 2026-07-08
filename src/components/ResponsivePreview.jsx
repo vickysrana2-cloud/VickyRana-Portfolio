@@ -8,9 +8,9 @@ export default function ResponsivePreview({ url, proDetail }) {
   const { title, description, tech, github } = proDetail;
 
   const devices = [
-    { id: "desktop", label: "Desktop", icon: <FaDesktop />, size: "max-w-6xl w-full h-[600px]" },
-    { id: "tablet", label: "Tablet", icon: <FaTabletAlt />, size: "max-w-[768px] w-full h-[700px]" },
-    { id: "mobile", label: "Mobile", icon: <FaMobileAlt />, size: "max-w-[375px] w-full h-[650px]" },
+    { id: "desktop", label: "Desktop", icon: <FaDesktop />, size: "max-w-6xl w-full h-[520px] sm:h-[600px]" },
+    { id: "tablet", label: "Tablet", icon: <FaTabletAlt />, size: "max-w-[768px] w-full h-[560px] sm:h-[700px]" },
+    { id: "mobile", label: "Mobile", icon: <FaMobileAlt />, size: "max-w-[375px] w-full h-[560px] sm:h-[650px]" },
   ];
 
   const activeDevice = devices.find((d) => d.id === device);
@@ -18,13 +18,13 @@ export default function ResponsivePreview({ url, proDetail }) {
   return (
     <div className="w-full flex flex-col items-center bg-transparent">
       {/* 1. Device Switcher (Toolbar) */}
-      <div className="sticky top-0 z-20 w-full flex justify-center  bg-black/30 backdrop-blur-md border-b border-white/5">
+      <div className="sticky top-0 z-20 w-full flex justify-center bg-black/30 backdrop-blur-md border-b border-white/5 px-2 py-2">
         <div className="flex bg-black/20 p-1 rounded-xl border border-white/50">
           {devices.map((d) => (
             <button
               key={d.id}
               onClick={() => setDevice(d.id)}
-              className={`flex items-center gap-2 px-4 py-1 rounded-lg text-sm font-medium transition-all duration-300 ${
+            className={`flex items-center gap-2 px-3 sm:px-4 py-1 rounded-lg text-sm font-medium transition-all duration-300 ${
                 device === d.id
                   ? "bg-blue-600 text-white shadow-lg shadow-blue-500/20"
                   : "text-gray-400 hover:text-white hover:bg-white/5"
@@ -38,10 +38,10 @@ export default function ResponsivePreview({ url, proDetail }) {
       </div>
 
       {/* 2. Live Preview Frame */}
-      <div className="w-full flex justify-center pb-8 ">
+      <div className="w-full flex justify-center px-2 sm:px-4 pb-8">
         {url ? (
           <div
-            className={`relative transition-all duration-500 ease-in-out border-[12px] border-gray-700 rounded-[2.5rem] shadow-2xl bg-gray-900 overflow-hidden ${activeDevice.size}`}
+            className={`relative transition-all duration-500 ease-in-out border-[6px] sm:border-[12px] border-gray-700 rounded-[1.5rem] sm:rounded-[2.5rem] shadow-2xl bg-gray-900 overflow-hidden ${activeDevice.size}`}
           >
             {/* Camera / Notch Detail for Mobile */}
             {device === "mobile" && (
@@ -64,7 +64,7 @@ export default function ResponsivePreview({ url, proDetail }) {
 
       {/* 3. Project Information Card */}
       <article className="relative w-full max-w-6xl mx-auto px-4 pb-12">
-        <div className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-8 md:p-12 backdrop-blur-xl transition-all duration-500 hover:border-blue-500/30">
+        <div className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-5 sm:p-8 md:p-12 backdrop-blur-xl transition-all duration-500 hover:border-blue-500/30">
           
           {/* Decorative hover gradient */}
           <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-transparent to-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
@@ -72,7 +72,7 @@ export default function ResponsivePreview({ url, proDetail }) {
           <div className="relative z-10">
             <header className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
               <div>
-                <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight mb-2">
+                <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-white tracking-tight mb-2">
                   {title}
                 </h2>
                 <div className="h-1 w-20 bg-blue-500 rounded-full" />
@@ -82,14 +82,14 @@ export default function ResponsivePreview({ url, proDetail }) {
                 href={github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 px-6 py-3 bg-white text-black font-bold rounded-full hover:bg-blue-500 hover:text-white transition-all duration-300 active:scale-95 shadow-xl"
+                className="flex items-center justify-center gap-3 px-5 sm:px-6 py-3 bg-white text-black font-bold rounded-full hover:bg-blue-500 hover:text-white transition-all duration-300 active:scale-95 shadow-xl"
               >
                 <FaGithub className="text-xl" />
                 View Source Code
               </a>
             </header>
 
-            <p className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-4xl font-light mb-10">
+            <p className="text-gray-400 text-base sm:text-lg md:text-xl leading-relaxed max-w-4xl font-light mb-10">
               {description}
             </p>
 

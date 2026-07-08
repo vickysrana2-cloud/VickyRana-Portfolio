@@ -3,8 +3,8 @@ import React from "react";
 const Specialties = () => {
   return (
     <div>
-      <p className="mt-4 text-center text-4xl font-bold">Specialties</p>
-      <section className="w-full min-h-[60vh] bg-gray-100 flex items-center justify-center px-6 lg:px-32">
+      <p className="mt-4 text-center text-3xl sm:text-4xl font-bold">Specialties</p>
+      <section className="w-full min-h-[60vh] bg-gray-100 flex items-center justify-center px-4 sm:px-6 lg:px-32">
         <div className="text-center max-w-2xl">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
             🚧 Work in Progress

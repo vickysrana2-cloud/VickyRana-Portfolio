@@ -10,10 +10,10 @@ import img3 from "../assets/slideImage/slide3.png";
 
 export default function ProjectsSection() {
   return (
-    <section className="min-h-screen text-white flex flex-wrap flex-col items-center relative py-10">
+    <section className="min-h-screen text-white flex flex-col items-center relative py-10 w-full">
       {/* Title */}
-      <div className="text-center lg:text-start mb-20 relative z-10 lg:w-5xl">
-        <h1 className="text-4xl md:text-5xl font-semibold">
+      <div className="text-center lg:text-start mb-12 sm:mb-20 relative z-10 w-full max-w-5xl">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold">
           Featured Projects
         </h1>
         <p className="text-gray-400 mt-2">
@@ -22,8 +22,8 @@ export default function ProjectsSection() {
       </div>
 
       {/* ===================== PROJECT 1 ===================== */}
-<div className="flex flex-col md:flex-row gap-4 lg:gap-8 relative z-10 items-end lg:mb-72 mb-24">
-  <div className="bg-[#0f0f0f] border border-gray-800 rounded-2xl shadow-lg p-6 lg:w-[600px] relative">
+<div className="flex flex-col lg:flex-row gap-4 lg:gap-8 relative z-10 items-stretch lg:items-end lg:mb-72 mb-20 w-full max-w-6xl">
+  <div className="bg-[#0f0f0f] border border-gray-800 rounded-2xl shadow-lg p-4 sm:p-6 w-full lg:w-[600px] relative">
     <p className="text-lg text-gray-200 font-bold">
       Introducing{" "}
       <span className="text-orange-400 text-2xl">StayEase</span> –{" "}
@@ -35,7 +35,7 @@ export default function ProjectsSection() {
     <div className="mt-4">
       <div className="p-6 rounded-2xl bg-gray-900 shadow-lg hover:shadow-xl transition-shadow">
 
-        <p className="text-gray-400 text-lg mb-3">
+        <p className="text-gray-400 text-base sm:text-lg mb-3">
           A full-stack platform enabling users to explore hotels, manage bookings, 
           and experience seamless reservation workflows with a clean and responsive interface.
         </p>
@@ -43,13 +43,13 @@ export default function ProjectsSection() {
         <div className="flex gap-3 text-xl mb-3">
           <FaReact className="text-teal-500" />
           <FaJs className="text-yellow-500" />
-          <SiTailwindcss classNameName="text-teal-400" />
+          <SiTailwindcss className="text-teal-400" />
           <AiOutlineApi className="text-red-500" />
           <AiOutlineDatabase className="text-purple-400" />
           <FaGithub />
         </div>
 
-        <ul className="text-gray-300 text-lg list-disc list-inside mb-4">
+        <ul className="text-gray-300 text-base sm:text-lg list-disc list-inside mb-4">
           <li>Secure authentication with protected routes</li>
           <li>Hotel browsing and booking management</li>
           <li>Optimized API handling for better performance</li>
@@ -79,8 +79,8 @@ export default function ProjectsSection() {
 
 
 {/* ===================== PROJECT 2 ===================== */}
-<div className="flex flex-col md:flex-row gap-4 lg:gap-8 relative z-10 lg:items-end lg:mb-72 mb-24">
-  <div className="bg-[#0f0f0f] border border-gray-800 rounded-2xl shadow-lg p-6 lg:w-[600px] relative">
+<div className="flex flex-col lg:flex-row gap-4 lg:gap-8 relative z-10 lg:items-end lg:mb-72 mb-20 w-full max-w-6xl">
+  <div className="bg-[#0f0f0f] border border-gray-800 rounded-2xl shadow-lg p-4 sm:p-6 w-full lg:w-[600px] relative">
     <p className="text-lg text-gray-200 font-bold">
       Introducing{" "}
       <span className="text-orange-400 text-2xl">Pawsitive</span> –{" "}
@@ -92,7 +92,7 @@ export default function ProjectsSection() {
     <div className="mt-4">
       <div className="p-6 rounded-2xl bg-gray-900 shadow-lg hover:shadow-xl transition-shadow">
 
-        <p className="text-gray-400 text-lg mb-3">
+        <p className="text-gray-400 text-base sm:text-lg mb-3">
           Backend-focused platform designed to manage users, pets, and related data 
           with secure access control and structured data handling.
         </p>
@@ -106,7 +106,7 @@ export default function ProjectsSection() {
           <FaGithub />
         </div>
 
-        <ul className="text-gray-300 text-lg list-disc list-inside mb-4">
+        <ul className="text-gray-300 text-base sm:text-lg list-disc list-inside mb-4">
           <li>Role-based authentication and authorization</li>
           <li>Secure API access with token-based validation</li>
           <li>Optimized database relationships and persistence</li>
@@ -122,15 +122,15 @@ export default function ProjectsSection() {
     </div>
   </div>
 
-  <div className="bg-[#0f0f0f] relative lg:top-10 lg:right-8 border-8 border-gray-800 rounded-2xl shadow-lg p-3 lg:w-[400px] w-64 flex items-center justify-center">
-    <img src="/bananas.jpg" alt="project" className="rounded-xl border-2 border-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.7)]" />
+  <div className="bg-[#0f0f0f] relative lg:top-10 lg:right-8 border-8 border-gray-800 rounded-2xl shadow-lg p-3 w-full max-w-[400px] mx-auto lg:mx-0 flex items-center justify-center">
+    <img src="/bananas.jpg" alt="project" className="w-full rounded-xl border-2 border-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.7)]" />
   </div>
 </div>
 
 
 {/* ===================== PROJECT 3 ===================== */}
-<div className="flex flex-col md:flex-row gap-4 lg:gap-8 relative items-end z-10 mb-10 lg:mb-24">
-  <div className="bg-[#0f0f0f] border border-gray-800 rounded-2xl shadow-lg p-6 lg:w-[600px] relative">
+<div className="flex flex-col lg:flex-row gap-4 lg:gap-8 relative items-stretch lg:items-end z-10 mb-10 lg:mb-24 w-full max-w-6xl">
+  <div className="bg-[#0f0f0f] border border-gray-800 rounded-2xl shadow-lg p-4 sm:p-6 w-full lg:w-[600px] relative">
     <p className="text-lg text-gray-200 font-bold">
       Introducing{" "}
       <span className="text-orange-400 text-2xl">QuickBite</span> –{" "}
@@ -142,7 +142,7 @@ export default function ProjectsSection() {
     <div className="mt-4">
       <div className="p-6 rounded-2xl bg-gray-900 shadow-lg hover:shadow-xl transition-shadow">
 
-        <p className="text-gray-400 text-lg mb-3">
+        <p className="text-gray-400 text-base sm:text-lg mb-3">
           A responsive food ordering platform allowing users to explore menus, 
           place orders, and track deliveries in real time with smooth UI interactions.
         </p>
@@ -155,7 +155,7 @@ export default function ProjectsSection() {
           <FaGithub />
         </div>
 
-        <ul className="text-gray-300 text-lg list-disc list-inside mb-4">
+        <ul className="text-gray-300 text-base sm:text-lg list-disc list-inside mb-4">
           <li>Real-time order tracking</li>
           <li>Secure authentication and checkout simulation</li>
           <li>Optimized API usage for performance</li>
@@ -171,8 +171,8 @@ export default function ProjectsSection() {
     </div>
   </div>
 
-  <div className="bg-[#0f0f0f] relative lg:top-10 lg:right-8 border-8 border-gray-800 rounded-2xl shadow-lg p-3 lg:w-[400px] w-64 flex items-center justify-center">
-    <img src="/bananas.jpg" alt="project" className="rounded-xl border-2 border-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.7)]" />
+  <div className="bg-[#0f0f0f] relative lg:top-10 lg:right-8 border-8 border-gray-800 rounded-2xl shadow-lg p-3 w-full max-w-[400px] mx-auto lg:mx-0 flex items-center justify-center">
+    <img src="/bananas.jpg" alt="project" className="w-full rounded-xl border-2 border-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.7)]" />
   </div>
 </div>
 

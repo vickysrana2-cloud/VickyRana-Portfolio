@@ -1,92 +1,84 @@
 import React from 'react';
-import { FaPhoneAlt, FaLinkedinIn, FaGithub, FaUserTie } from 'react-icons/fa';
+import { FaPhoneAlt, FaLinkedinIn, FaGithub } from 'react-icons/fa';
 import { LuMail } from "react-icons/lu";
 import rightImg from "../../assets/img-hero_section.png";
 
-
 const AboutMeHeader = () => {
   return (
-    <div className="relative w-full max-w-7xl mx-auto  h-[550px] bg-gradient-to-r from-slate-900 to-slate-800 overflow-hidden flex items-center px-16 text-white font-sans">
-
+    <div className="relative mx-auto flex w-full max-w-7xl flex-col items-center gap-8 overflow-hidden bg-gradient-to-r from-slate-900 to-slate-800 px-4 py-8 text-white sm:gap-10 sm:px-6 sm:py-12 lg:min-h-[550px] lg:flex-row lg:px-16 lg:py-0 lg:items-center">
       {/* Decorative dots (top-right) */}
-      <div className="absolute top-10 right-10 grid grid-cols-2 gap-3 opacity-70">
+      <div className="absolute top-6 right-6 hidden grid-cols-2 gap-2 opacity-50 sm:top-8 sm:right-8 md:grid lg:opacity-70">
         {[...Array(6)].map((_, i) => (
-          <div key={i} className="w-2 h-2 bg-amber-400 rounded-full" />
+          <div key={i} className="h-1.5 w-1.5 rounded-full bg-amber-400 sm:h-2 sm:w-2" />
         ))}
       </div>
 
       {/* Decorative dots (bottom-right) */}
-      <div className="absolute bottom-20 right-40 grid grid-cols-3 gap-3 opacity-70">
+      <div className="absolute bottom-12 right-12 hidden grid-cols-3 gap-2 opacity-50 sm:bottom-16 sm:right-20 md:grid lg:opacity-70">
         {[...Array(6)].map((_, i) => (
-          <div key={i} className="w-2 h-2 bg-amber-400 rounded-full" />
+          <div key={i} className="h-1.5 w-1.5 rounded-full bg-amber-400 sm:h-2 sm:w-2" />
         ))}
       </div>
 
       {/* Left Content */}
-      <div className="z-10 w-1/2 space-y-6">
-        <h1 className="text-6xl font-black uppercase tracking-tight text-amber-400">ABOUT ME</h1>
-        <h2 className="text-3xl font-light tracking-widest text-white">VICKY RANA</h2>
+      <div className="z-10 w-full space-y-3 text-center sm:space-y-4 lg:space-y-6 lg:w-1/2 lg:text-left">
+        <h1 className="text-3xl font-black uppercase tracking-tight text-amber-400 sm:text-4xl lg:text-6xl">ABOUT ME</h1>
+        <h2 className="text-lg font-light tracking-widest text-white sm:text-2xl lg:text-3xl">VICKY RANA</h2>
 
-        <p className="text-sm opacity-90 leading-relaxed max-w-md text-slate-300">
+        <p className="mx-auto max-w-sm text-xs leading-relaxed text-slate-300 opacity-90 sm:text-sm lg:mx-0 lg:max-w-lg">
           Detail-oriented developer with hands-on experience building responsive and scalable web applications
-          using modern technologies. Strong foundation in JavaScript, React, and backend systems with 
+          using modern technologies. Strong foundation in JavaScript, React, and backend systems with
           Java and Spring Boot, along with practical exposure to APIs, authentication, and database management.
           Brings an analytical mindset shaped by prior engineering experience, with a focus on writing clean,
           efficient, and maintainable code.
         </p>
 
-        <div className="border-t border-amber-400/40 w-[80%]"></div>
+        <div className="mx-auto w-[90%] border-t border-amber-400/40 sm:w-[80%] lg:mx-0"></div>
 
         {/* Info Pills */}
-        <div className="flex flex-wrap gap-3">
-          {[
-            '12 Feb 2001',
-            'Nagpur, Maharashtra',
-            'Languages: EN / HI / MR'
-          ].map((item) => (
-            <span key={item} className="bg-amber-100 text-amber-900 px-5 py-2 rounded-full text-sm font-semibold shadow-md">
+        <div className="flex flex-wrap justify-center gap-2 lg:justify-start">
+          {['12 Feb 2001', 'Nagpur, Maharashtra', 'Languages: EN / HI / MR'].map((item) => (
+            <span key={item} className="rounded-full bg-amber-100 px-3 py-1.5 text-xs font-semibold text-amber-900 shadow-md sm:px-4 sm:py-2 sm:text-sm">
               {item}
             </span>
           ))}
         </div>
 
-        <div className="border-t border-amber-400/40 w-[80%]"></div>
+        <div className="mx-auto w-[90%] border-t border-amber-400/40 sm:w-[80%] lg:mx-0"></div>
 
         {/* Contact */}
-        <div className="flex items-center gap-4 text-amber-300">
-          <FaPhoneAlt className="text-xl" />
-          <span className="text-lg text-white">7218869971</span>
+        <div className="flex flex-col items-center justify-center gap-2 text-amber-300 sm:flex-row sm:gap-3 lg:justify-start">
+          <div className="flex items-center gap-2">
+            <FaPhoneAlt className="text-base sm:text-lg" />
+            <span className="text-sm sm:text-base lg:text-lg text-white">7218869971</span>
+          </div>
         </div>
 
         {/* Social */}
-        <div className="flex gap-6 pt-2 text-lg text-amber-300">
+        <div className="flex flex-wrap justify-center gap-4 pt-1 text-base text-amber-300 sm:gap-5 sm:text-lg lg:justify-start">
           <a href="https://www.linkedin.com/in/vicky-rana-7457ab225/" target="_blank" rel="noopener noreferrer">
-            <FaLinkedinIn className="hover:text-amber-400 cursor-pointer" />
+            <FaLinkedinIn className="cursor-pointer hover:text-amber-400" />
           </a>
           <a href="https://github.com/vickysrana2-cloud" target="_blank" rel="noopener noreferrer">
-            <FaGithub className="hover:text-amber-400 cursor-pointer" />
+            <FaGithub className="cursor-pointer hover:text-amber-400" />
           </a>
           <a href="mailto:vickysrana2@gmail.com" target="_blank" rel="noopener noreferrer">
-            <LuMail className="hover:text-amber-400 cursor-pointer" />
+            <LuMail className="cursor-pointer hover:text-amber-400" />
           </a>
         </div>
       </div>
 
       {/* RIGHT Placeholder → ICON */}
-      <div className="absolute right-0 h-full w-1/2 flex justify-center items-center">
-        <div className="absolute w-[420px] h-[420px] border-[50px] border-amber-400/50"></div>
+      <div className="relative mt-6 flex min-h-[220px] w-full items-center justify-center sm:min-h-[280px] lg:absolute lg:right-0 lg:mt-0 lg:h-full lg:w-1/2">
+        <div className="absolute h-[180px] w-[160px] border-[12px] border-amber-400/50 sm:h-[240px] sm:w-[200px] sm:border-[20px] lg:h-[420px] lg:w-[420px] lg:border-[50px]"></div>
 
-        <div className="w-[300px] h-[400px] border-2 border-dashed border-amber-400/40 flex items-center justify-center text-amber-300 text-sm">
-               <img
-          src={rightImg}
-          alt="profile"
-          className=" object-cover z-10 shadow-lg"
-        />
+        <div className="flex h-[160px] w-[140px] items-center justify-center border-2 border-dashed border-amber-400/40 text-sm text-amber-300 sm:h-[220px] sm:w-[180px] lg:h-[400px] lg:w-[300px]">
+          <img src={rightImg} alt="profile" className="z-10 h-full w-full object-cover shadow-lg" />
         </div>
       </div>
 
-      <div className="absolute top-24 right-64 text-amber-300 text-2xl">~~~</div>
-      <div className="absolute bottom-16 right-16 text-amber-300 text-2xl">~~~</div>
+      <div className="absolute top-16 right-20 hidden text-lg text-amber-300 sm:top-20 sm:right-32 sm:text-xl md:block lg:text-2xl lg:right-64">~~~</div>
+      <div className="absolute bottom-12 right-8 hidden text-lg text-amber-300 sm:bottom-16 sm:right-12 sm:text-xl md:block lg:text-2xl lg:right-16">~~~</div>
     </div>
   );
 };

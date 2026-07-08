@@ -2,9 +2,9 @@ import { Link } from "react-router";
 
 export default function InShortAbout() {
   return (
-    <section className="max-w-6xl mx-auto px-6 py-16 lg:py-24">
+    <section className="max-w-6xl mx-auto px-0 sm:px-6 py-10 sm:py-16 lg:py-24">
       
-      <div className="rounded-2xl border border-gray-300/30 backdrop-blur-md bg-white/5 p-6 lg:p-10">
+      <div className="rounded-2xl border border-gray-300/30 backdrop-blur-md bg-white/5 p-5 sm:p-6 lg:p-10">
 
         {/* Heading */}
         <h2 className="text-3xl md:text-5xl font-semibold mb-6 text-teal-200 drop-shadow-[0_0_10px_#00f7ff]">
@@ -12,7 +12,7 @@ export default function InShortAbout() {
         </h2>
 
         {/* Paragraph */}
-        <p className="text-sm md:text-lg lg:text-xl leading-relaxed font-medium italic text-justify 
+        <p className="text-sm md:text-lg lg:text-xl leading-relaxed font-medium italic text-left sm:text-justify 
                       bg-gradient-to-r from-pink-500 via-purple-400 to-indigo-500 
                       bg-clip-text text-transparent drop-shadow-md space-y-2">
           

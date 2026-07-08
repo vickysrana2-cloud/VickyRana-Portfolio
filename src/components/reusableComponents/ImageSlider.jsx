@@ -21,13 +21,13 @@ export default function ImageSlider({ images }) {
   }, [index]);
 
   return (
-    <div className="bg-[#0f0f0f] relative lg:top-10 lg:right-8 border-8 border-gray-800 rounded-2xl shadow-lg p-3 lg:w-[400px] w-64 flex items-center justify-center overflow-hidden">
+    <div className="bg-[#0f0f0f] relative lg:top-10 lg:right-8 border-8 border-gray-800 rounded-2xl shadow-lg p-3 w-full max-w-[400px] mx-auto lg:mx-0 flex items-center justify-center overflow-hidden">
 
       {/* Image */}
       <img
         src={images[index]}
         alt="project"
-        className="rounded-xl border-2 border-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.7)] transition-all duration-500"
+        className="w-full rounded-xl border-2 border-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.7)] transition-all duration-500"
       />
 
       {/* Controls */}

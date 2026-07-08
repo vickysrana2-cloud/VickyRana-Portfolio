@@ -7,12 +7,12 @@ import PastExperienceSection from "./aboutComp/PastExperienceSection";
 
 const AboutMe = () => {
   return (
-    <div className="relative w-full mt-2 overflow-hidden bg-gradient-to-br from-amber-900 via-amber-800 to-amber-600 rounded-3xl text-white">
+    <div className="relative mt-2 w-full overflow-x-hidden rounded-3xl bg-gradient-to-br from-amber-900 via-amber-800 to-amber-600 px-1 text-white sm:px-2">
       <AboutMeHeader />
       <PurposeSection />
       <LifeGoals />
       <InterestsSection />
-      <PastExperienceSection/>
+      <PastExperienceSection />
     </div>
   );
 };

@@ -11,12 +11,12 @@ const Home = () => {
   return (
     <>
       {/* HERO SECTION → using your CSS */}
-      <div className="upperhero relative min-h-[480px] lg:min-h-screen mt-2 overflow-hidden rounded-t-3xl flex items-center">
+      <div className="upperhero relative min-h-[640px] sm:min-h-[600px] lg:min-h-screen mt-2 overflow-hidden rounded-t-3xl flex items-center py-16 lg:py-0">
         
         {/* Animated Gradient Orbs */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-yellow-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse animation-delay-2000"></div>
-        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse animation-delay-4000"></div>
+        <div className="absolute top-1/4 left-1/4 w-48 h-48 sm:w-72 sm:h-72 lg:w-96 lg:h-96 bg-purple-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 sm:w-72 sm:h-72 lg:w-96 lg:h-96 bg-yellow-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse animation-delay-2000"></div>
+        <div className="absolute top-1/2 left-1/2 w-48 h-48 sm:w-72 sm:h-72 lg:w-96 lg:h-96 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse animation-delay-4000"></div>
 
         {/* Circles */}
         <div className="circle circle1 drop-shadow-[0_0_15px_rgba(255,215,0,0.6)]"></div>
@@ -29,10 +29,10 @@ const Home = () => {
         <div className="absolute inset-0 grid-bg opacity-30"></div>
 
         {/* MAIN CONTENT */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center justify-between gap-12">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
           
           {/* LEFT */}
-          <div className="text-center lg:text-left max-w-xl backdrop-blur-sm bg-white/5 p-8 rounded-2xl border border-white/10 shadow-2xl">
+          <div className="text-center lg:text-left w-full max-w-xl backdrop-blur-sm bg-white/5 p-5 sm:p-8 rounded-2xl border border-white/10 shadow-2xl">
             
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-full px-4 py-1.5 mb-6 border border-white/20">
               <span className="relative flex h-2 w-2">
@@ -44,15 +44,15 @@ const Home = () => {
               </span>
             </div>
 
-            <h1 className="text-5xl lg:text-7xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-gray-400">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-gray-400">
               Hi there,
             </h1>
 
-            <h1 className="text-5xl lg:text-8xl font-bold mb-6 bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 bg-clip-text text-transparent animate-gradient">
+            <h1 className="text-4xl sm:text-5xl lg:text-8xl font-bold mb-6 bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 bg-clip-text text-transparent animate-gradient">
               I’m Vicky Rana
             </h1>
 
-            <p className="text-gray-300 text-lg lg:text-xl font-light mb-8 tracking-wide border-l-4 border-orange-500 pl-4">
+            <p className="text-gray-300 text-base sm:text-lg lg:text-xl font-light mb-8 tracking-wide border-l-4 border-orange-500 pl-4 text-left">
               Web Developer | Building Modern, Responsive Web Apps
             </p>
 
@@ -61,7 +61,7 @@ const Home = () => {
                 window.scrollTo({ top: 0, left: 0, behavior: "smooth" })
               }
               to="/projects"
-              className="group relative inline-flex items-center gap-2 px-8 py-4 font-bold text-white rounded-full bg-gradient-to-r from-orange-600 to-pink-600 shadow-lg hover:shadow-orange-500/25 transition-all duration-300 transform hover:-translate-y-1 overflow-hidden"
+              className="group relative inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 sm:px-8 py-4 font-bold text-white rounded-full bg-gradient-to-r from-orange-600 to-pink-600 shadow-lg hover:shadow-orange-500/25 transition-all duration-300 transform hover:-translate-y-1 overflow-hidden"
             >
               <span className="relative z-10">View My Projects</span>
               <svg className="relative z-10 w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -91,7 +91,7 @@ const Home = () => {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
+        <div className="absolute bottom-5 sm:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
           <span className="text-white/50 text-xs tracking-wider font-mono">SCROLL</span>
           <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
             <div className="w-1 h-3 bg-white/50 rounded-full mt-2 scroll-down"></div>
@@ -101,7 +101,7 @@ const Home = () => {
 
       {/* OTHER SECTIONS → same background */}
       <section className="linierEffect relative rounded-b-3xl border-t border-white/10 shadow-2xl overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 py-16 space-y-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 space-y-16 sm:space-y-24">
           <InShortAbout />
           <ProjectsSection />
           <Skills />

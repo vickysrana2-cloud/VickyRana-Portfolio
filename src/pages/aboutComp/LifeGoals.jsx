@@ -1,95 +1,67 @@
 import React from 'react';
 import { FaBullseye } from 'react-icons/fa';
 
-
 const LifeGoals = () => {
   return (
-    <div className="relative w-full max-w-7xl mx-auto h-[550px] bg-gradient-to-r from-slate-900 to-slate-800 overflow-hidden flex items-center px-16 text-white font-sans">
-
+    <div className="relative mx-auto flex w-full max-w-7xl flex-col items-center gap-6 overflow-hidden bg-gradient-to-r from-slate-900 to-slate-800 px-4 py-8 text-white sm:gap-8 sm:px-6 sm:py-12 lg:min-h-[550px] lg:flex-row lg:px-16 lg:py-0">
       {/* Decorative dots (top-right) */}
-      <div className="absolute top-10 right-10 grid grid-cols-2 gap-3 opacity-70">
+      <div className="absolute top-6 right-6 hidden grid-cols-2 gap-2 opacity-50 sm:top-8 sm:right-8 md:grid lg:opacity-70">
         {[...Array(6)].map((_, i) => (
-          <div key={i} className="w-2 h-2 bg-amber-400 rounded-full" />
+          <div key={i} className="h-1.5 w-1.5 rounded-full bg-amber-400 sm:h-2 sm:w-2" />
         ))}
       </div>
 
       {/* Decorative dots (bottom-left) */}
-      <div className="absolute bottom-16 left-24 grid grid-cols-3 gap-3 opacity-70">
+      <div className="absolute bottom-12 left-8 hidden grid-cols-3 gap-2 opacity-50 sm:bottom-16 sm:left-12 md:grid lg:opacity-70">
         {[...Array(6)].map((_, i) => (
-          <div key={i} className="w-2 h-2 bg-amber-400 rounded-full" />
+          <div key={i} className="h-1.5 w-1.5 rounded-full bg-amber-400 sm:h-2 sm:w-2" />
         ))}
       </div>
 
-      {/* LEFT: Image with frame */}
-      {/* <div className="relative w-1/2 flex justify-center items-center"> */}
-        {/* Frame */}
-        {/* <div className="absolute w-[360px] h-[420px] border-[40px] border-amber-400/40"></div> */}
-
-        {/* Image */}
-        {/* <img
-          src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg"
-          alt="profile"
-          className="w-[260px] h-[340px] object-cover z-10 shadow-lg"
-        />
-      </div> */}
-
       {/* LEFT: Goals visual with frame */}
-<div className="relative w-1/2 flex justify-center items-center">
+      <div className="relative flex min-h-[200px] w-full items-center justify-center sm:min-h-[240px] lg:w-1/2">
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="h-[180px] w-[160px] border-[16px] border-amber-400/40 sm:h-[240px] sm:w-[200px] sm:border-[20px] lg:h-[420px] lg:w-[360px] lg:border-[40px]"></div>
+        </div>
 
-  {/* Frame */}
-  <div className="absolute inset-0 flex justify-center items-center">
-    <div className="absolute w-[360px] h-[420px] border-[40px] border-amber-400/40"></div>
-  </div>
+        <div className="relative z-10 flex flex-col items-center justify-center text-center">
+          <div className="mb-3 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-amber-400 to-amber-600 shadow-lg shadow-amber-500/30 sm:mb-4 sm:h-28 sm:w-28">
+            <FaBullseye className="text-4xl text-slate-900 sm:text-6xl" />
+          </div>
 
-  {/* Icon Content */}
-  <div className="relative z-10 flex flex-col items-center justify-center text-center">
+          <h4 className="text-base font-bold uppercase tracking-wider text-amber-300 sm:text-lg">Life Goals</h4>
 
-    <div className="w-28 h-28 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center shadow-lg shadow-amber-500/30 mb-5">
-      <FaBullseye className="text-slate-900 text-6xl" />
-    </div>
+          <p className="mt-1 max-w-[180px] text-xs text-slate-300/80 sm:max-w-[200px]">Growth • Impact • Balance</p>
 
-    <h4 className="text-amber-300 font-bold text-lg uppercase tracking-wider">
-      Life Goals
-    </h4>
-
-    <p className="text-slate-300/80 text-xs mt-1 max-w-[200px]">
-      Growth • Impact • Balance
-    </p>
-
-    <div className="mt-3 w-16 h-0.5 bg-amber-400/40 rounded-full"></div>
-  </div>
-
-</div>
+          <div className="mt-3 h-0.5 w-12 rounded-full bg-amber-400/40 sm:w-16"></div>
+        </div>
+      </div>
 
       {/* RIGHT: Content */}
-      <div className="z-10 w-1/2 space-y-6">
-        <h2 className="text-5xl font-black uppercase tracking-tight text-amber-400">
+      <div className="z-10 w-full space-y-3 text-center sm:space-y-4 lg:space-y-6 lg:w-1/2 lg:text-left">
+        <h2 className="text-2xl font-black uppercase tracking-tight text-amber-400 sm:text-4xl lg:text-5xl">
           LIFE GOALS
         </h2>
 
-        <div className="border-t border-amber-400/40 w-[70%]" />
+        <div className="mx-auto w-[90%] border-t border-amber-400/40 sm:w-[70%] lg:mx-0" />
 
-        {/* Goals list */}
-        <div className="space-y-4">
+        <div className="space-y-3 sm:space-y-4">
           {[
             'Continuously grow as a developer and problem solver.',
             'Build products that impact real users at scale.',
             'Maintain balance between creativity, discipline, and learning.'
           ].map((goal, i) => (
-            <div key={i} className="flex items-start gap-4">
-              <FaBullseye className="text-amber-400 mt-1 shrink-0" />
-              <p className="text-sm text-slate-300 leading-relaxed max-w-md">
-                {goal}
-              </p>
+            <div key={i} className="flex items-start gap-2 text-left sm:gap-3">
+              <FaBullseye className="mt-0.5 shrink-0 text-amber-400 text-sm sm:text-base" />
+              <p className="max-w-md text-xs leading-relaxed text-slate-300 sm:text-sm">{goal}</p>
             </div>
           ))}
         </div>
       </div>
 
       {/* Decorative waves */}
-      <div className="absolute top-24 right-64 text-amber-300 text-2xl">~~~</div>
-      <div className="absolute bottom-20 right-16 text-amber-300 text-2xl">~~~</div>
-
+      <div className="absolute top-12 right-8 hidden text-base text-amber-300 sm:top-16 sm:right-20 sm:text-lg md:block lg:text-2xl lg:right-64">~~~</div>
+      <div className="absolute bottom-12 left-6 hidden text-base text-amber-300 sm:bottom-16 sm:left-8 sm:text-lg md:block lg:text-2xl lg:left-16">~~~</div>
     </div>
   );
 };

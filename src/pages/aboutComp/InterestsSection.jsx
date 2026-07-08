@@ -4,42 +4,39 @@ import { HiOutlineSparkles } from "react-icons/hi";
 
 const InterestsSection = () => {
   return (
-    <div className="relative w-full max-w-7xl mx-auto h-[550px] bg-gradient-to-r from-slate-900 to-slate-800 overflow-hidden flex items-center px-16 text-white font-sans">
+    <div className="relative mx-auto flex w-full max-w-7xl flex-col items-center gap-6 overflow-hidden bg-gradient-to-r from-slate-900 to-slate-800 px-4 py-8 text-white sm:gap-8 sm:px-6 sm:py-12 lg:min-h-[550px] lg:flex-row lg:px-16 lg:py-0">
       {/* Decorative dots (top-left) */}
-      <div className="absolute top-10 left-10 grid grid-cols-2 gap-3 opacity-70">
+      <div className="absolute top-6 left-6 hidden grid-cols-2 gap-2 opacity-50 sm:top-8 sm:left-8 md:grid lg:opacity-70">
         {[...Array(6)].map((_, i) => (
-          <div key={i} className="w-2 h-2 bg-amber-400 rounded-full" />
+          <div key={i} className="h-1.5 w-1.5 rounded-full bg-amber-400 sm:h-2 sm:w-2" />
         ))}
       </div>
 
       {/* Decorative dots (bottom-right) */}
-      <div className="absolute bottom-20 right-32 grid grid-cols-3 gap-3 opacity-70">
+      <div className="absolute bottom-12 right-8 hidden grid-cols-3 gap-2 opacity-50 sm:bottom-16 sm:right-16 md:grid lg:opacity-70">
         {[...Array(6)].map((_, i) => (
-          <div key={i} className="w-2 h-2 bg-amber-400 rounded-full" />
+          <div key={i} className="h-1.5 w-1.5 rounded-full bg-amber-400 sm:h-2 sm:w-2" />
         ))}
       </div>
 
       {/* LEFT: Content */}
-      <div className="z-10 w-1/2 space-y-6">
-        <h2 className="text-5xl font-black uppercase tracking-tight text-amber-400">
+      <div className="z-10 w-full space-y-3 text-center sm:space-y-4 lg:space-y-6 lg:w-1/2 lg:text-left">
+        <h2 className="text-2xl font-black uppercase tracking-tight text-amber-400 sm:text-4xl lg:text-5xl">
           INTERESTS & HOBBIES
         </h2>
 
-        <div className="border-t border-amber-400/40 w-[70%]" />
+        <div className="mx-auto w-[90%] border-t border-amber-400/40 sm:w-[70%] lg:mx-0" />
 
-        <p className="text-sm text-slate-300 max-w-md leading-relaxed">
+        <p className="mx-auto max-w-md text-xs leading-relaxed text-slate-300 sm:text-sm lg:mx-0">
           A mix of analytical thinking and creative exploration keeps me engaged
           outside of work. These interests influence how I approach
           problem-solving and design.
         </p>
 
         {/* Pills */}
-        <div className="flex flex-wrap gap-3 pt-2">
-          {["Technology", "Gaming", "UI Design", "Reading"].map((item) => (
-            <span
-              key={item}
-              className="bg-amber-100 text-amber-900 px-5 py-2 rounded-full text-sm font-semibold shadow-md"
-            >
+        <div className="flex flex-wrap justify-center gap-2 pt-1 lg:justify-start">
+          {['Technology', 'Gaming', 'UI Design', 'Reading'].map((item) => (
+            <span key={item} className="rounded-full bg-amber-100 px-3 py-1.5 text-xs font-semibold text-amber-900 shadow-md sm:px-4 sm:py-2 sm:text-sm">
               {item}
             </span>
           ))}
@@ -47,41 +44,31 @@ const InterestsSection = () => {
       </div>
 
       {/* RIGHT: Interests visual with frame */}
-      <div className="relative w-1/2 flex justify-center items-center">
-        {/* Frame */}
-        <div className="absolute inset-0 flex justify-center items-center">
-          <div className="absolute w-[360px] h-[420px] border-[40px] border-amber-400/40"></div>
+      <div className="relative flex min-h-[220px] w-full items-center justify-center sm:min-h-[260px] lg:w-1/2">
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="h-[180px] w-[160px] border-[16px] border-amber-400/40 sm:h-[240px] sm:w-[200px] sm:border-[20px] lg:h-[420px] lg:w-[360px] lg:border-[40px]"></div>
         </div>
 
-        {/* Icon Cluster */}
         <div className="relative z-10 flex flex-col items-center justify-center text-center">
-          {/* Main Icon */}
-          <div className="w-28 h-28 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center shadow-lg shadow-amber-500/30 mb-6">
-            <HiOutlineSparkles className="text-slate-900 text-6xl" />
+          <div className="mb-3 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-amber-400 to-amber-600 shadow-lg shadow-amber-500/30 sm:mb-4 sm:h-28 sm:w-28">
+            <HiOutlineSparkles className="text-4xl text-slate-900 sm:text-6xl" />
           </div>
 
-          {/* Small icons row */}
-          <div className="flex gap-5 text-amber-300 text-2xl opacity-90">
+          <div className="flex gap-3 text-lg text-amber-300 opacity-90 sm:gap-5 sm:text-2xl">
             <FaLaptopCode />
             <FaChessKnight />
             <FaBookOpen />
           </div>
 
-          <p className="text-slate-300/80 text-xs mt-3">
-            Curiosity • Creativity • Strategy
-          </p>
+          <p className="mt-3 text-xs text-slate-300/80">Curiosity • Creativity • Strategy</p>
 
-          <div className="mt-3 w-16 h-0.5 bg-amber-400/40 rounded-full"></div>
+          <div className="mt-3 h-0.5 w-12 rounded-full bg-amber-400/40 sm:w-16"></div>
         </div>
       </div>
 
       {/* Decorative waves */}
-      <div className="absolute top-24 right-52 text-amber-300 text-2xl">
-        ~~~
-      </div>
-      <div className="absolute bottom-16 left-20 text-amber-300 text-2xl">
-        ~~~
-      </div>
+      <div className="absolute top-12 right-8 hidden text-base text-amber-300 sm:top-16 sm:right-20 sm:text-lg md:block lg:text-2xl lg:right-52">~~~</div>
+      <div className="absolute bottom-12 left-6 hidden text-base text-amber-300 sm:bottom-16 sm:left-8 sm:text-lg md:block lg:text-2xl lg:left-20">~~~</div>
     </div>
   );
 };

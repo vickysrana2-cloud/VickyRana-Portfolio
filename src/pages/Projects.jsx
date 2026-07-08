@@ -47,7 +47,7 @@ const Projects = () => {
   ];
 
   return (
-    <section className="  my-2 rounded-3xl   min-h-screen text-white px-6 py-16 bg-[radial-gradient(circle_at_center,_#5C4DB8_0%,_#0A1E46_60%,_#2E2A5D_10%)]">
+    <section className="relative my-2 rounded-3xl min-h-screen text-white px-4 sm:px-6 py-12 sm:py-16 bg-[radial-gradient(circle_at_center,_#5C4DB8_0%,_#0A1E46_60%,_#2E2A5D_10%)] overflow-hidden">
       {/* Animated Gradient Orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 -left-32 w-96 h-96 bg-purple-700 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse-slow"></div>
@@ -69,7 +69,7 @@ const Projects = () => {
       </div>
 
       {/* Header with accent line */}
-      <div className="relative z-10 text-center mb-24">
+      <div className="relative z-10 text-center mb-14 sm:mb-24">
         <div className="inline-flex items-center justify-center gap-3 mb-4">
           <div className="h-px w-12 bg-gradient-to-r from-transparent to-purple-500"></div>
           <span className="text-sm font-mono uppercase tracking-wider text-purple-300 bg-purple-500/10 px-3 py-1 rounded-full border border-purple-500/20 backdrop-blur-sm">
@@ -77,7 +77,7 @@ const Projects = () => {
           </span>
           <div className="h-px w-12 bg-gradient-to-l from-transparent to-purple-500"></div>
         </div>
-        <h1 className="text-6xl py-2 font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-100 to-gray-400 tracking-tighter drop-shadow-2xl">
+        <h1 className="text-4xl sm:text-6xl py-2 font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-100 to-gray-400 tracking-tighter drop-shadow-2xl">
           My Projects
         </h1>
         <div className="mt-3 flex justify-center">
@@ -183,15 +183,15 @@ const Projects = () => {
           <div className="absolute inset-0 bg-black/70 backdrop-blur-md animate-fadeIn"></div>
 
           {/* Modal Container */}
-          <div className="relative w-full max-w-7xl max-h-full  bg-gradient-to-br from-[#0F172A]/95 to-[#111827]/95 backdrop-blur-xl rounded-2xl border border-white/50 shadow-2xl shadow-black/50 overflow-hidden animate-slideUp">
+          <div className="relative w-full max-w-7xl max-h-[94vh] bg-gradient-to-br from-[#0F172A]/95 to-[#111827]/95 backdrop-blur-xl rounded-2xl border border-white/50 shadow-2xl shadow-black/50 overflow-hidden animate-slideUp">
             {/* Modal Header with decorative line */}
-            <div className="flex items-center justify-between p-2 border-b border-white/10 bg-black/30 backdrop-blur-sm">
-              <div className="flex items-center gap-3">
+            <div className="flex items-center justify-between gap-2 p-2 border-b border-white/10 bg-black/30 backdrop-blur-sm">
+              <div className="flex min-w-0 items-center gap-2 sm:gap-3">
                 <div className="w-1.5 h-6 bg-gradient-to-b from-purple-500 to-blue-500 rounded-full"></div>
-                <h3 className="text-xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
+                <h3 className="truncate text-base sm:text-xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
                   {projects[activeProject].title}
                 </h3>
-                <span className="text-xs font-mono text-purple-300 bg-purple-500/20 px-2 py-0.5 rounded-full">
+                <span className="hidden sm:inline text-xs font-mono text-purple-300 bg-purple-500/20 px-2 py-0.5 rounded-full">
                   Live Preview
                 </span>
               </div>

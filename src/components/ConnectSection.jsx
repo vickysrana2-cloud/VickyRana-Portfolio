@@ -44,20 +44,20 @@ export default function ConnectSection({ a, b }) {
   };
 
   return (
-    <section className="text-white min-h-screen flex items-center justify-center p-8 ">
-      <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+    <section className="text-white min-h-screen flex items-center justify-center px-0 py-10 sm:p-8">
+      <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 items-center">
         {/* Left Side - Text & Illustration */}
         <div className="flex flex-col items-center md:items-start space-y-6">
-          <h2 className="text-4xl font-extrabold leading-snug">
+          <h2 className="text-3xl sm:text-4xl font-extrabold leading-snug text-center md:text-left">
             {a} <span className="text-cyan-400">{b}</span>
           </h2>
-          <div className="w-72 lg:w-96">
-            <img loading="lazy" src={coffeeLover} alt="Project Illustration" />
+          <div className="w-56 sm:w-72 lg:w-96">
+            <img loading="lazy" src={coffeeLover} alt="Project Illustration" className="w-full" />
           </div>
         </div>
 
         {/* Right Side - Contact Form */}
-        <form onSubmit={handleSubmit} className="rounded-xl p-6 space-y-4">
+        <form onSubmit={handleSubmit} className="rounded-xl p-0 sm:p-6 space-y-4 w-full">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <input
               type="text"
